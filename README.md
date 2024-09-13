@@ -7,7 +7,7 @@
 </h1>
 
 <p align="center">
-  <a href="https://discord.gg/ZegqCBr"><img src="https://img.shields.io/discord/612704110008991783" alt="discord"></a>
+  <a href="https://discord.gg/ZegqCBr"><img src="https://img.shields.io/discord/612704110008991783?logo=discord&logoColor=white&label=Discord&color=5865F2" alt="discord"></a>
   <a href="https://github.com/standard/standard/actions/workflows/test-external.yml"><img src="https://github.com/standard/standard/actions/workflows/test-external.yml/badge.svg?branch=master" alt="External tests"></a>
   <a href="https://github.com/standard/standard/actions/workflows/test-internal.yml"><img src="https://github.com/standard/standard/actions/workflows/test-internal.yml/badge.svg?branch=master" alt="Internal tests"></a>
   <a href="https://github.com/standard/standard/actions?query=workflow%3A%22Old+test%22"><img src="https://github.com/standard/standard/workflows/Old%20test/badge.svg" alt="status badge old Node test"></a>
@@ -17,7 +17,7 @@
 </p>
 
 <h5 align="center">
-  Sponsored by&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://wormhole.app/?utm_medium=sponsorship&utm_source=standard&utm_campaign=feross"><img src="https://cdn.rawgit.com/standard/standard/master/docs/logos/wormhole.png" alt="Wormhole" height=50 valign="middle"></a>
+  Sponsored by&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://socket.dev"><img src="https://cdn.rawgit.com/standard/standard/master/docs/logos/socket.png" alt="Socket – Supply Chain Dependency Security for JavaScript and npm" height=50 valign="middle"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://wormhole.app/?utm_medium=sponsorship&utm_source=standard&utm_campaign=feross"><img src="https://cdn.rawgit.com/standard/standard/master/docs/logos/wormhole.png" alt="Wormhole" height=50 valign="middle"></a>
 </h5>
 
 <p align="center">
@@ -183,7 +183,7 @@ to `standard`.
 | [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/mongodb.jpg>](https://www.mongodb.com) | [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/zendesk.png>](https://www.zendesk.com) | [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/brave.png>](https://www.brave.com) | [<img width=190 src=https://assets.vercel.com/image/upload/v1621541666/front/assets/logotype-black-on-white.png>](https://vercel.com) |
 |---|---|---|---|
 
-| [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/nodesource.png>](https://nodesource.com) | [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/nearform.png>](http://www.nearform.com) | [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/typeform.png>](https://www.typeform.com) | [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/gov-uk.png>](https://gds.blog.gov.uk) |
+| [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/socket.png>](https://socket.dev) | [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/nearform.png>](http://www.nearform.com) | [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/typeform.png>](https://www.typeform.com) | [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/gov-uk.png>](https://gds.blog.gov.uk) |
 |---|---|---|---|
 
 | [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/heroku.png>](https://www.heroku.com) | [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/saucelabs.png>](https://saucelabs.com) | [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/automattic.png>](https://automattic.com) | [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/godaddy.png>](https://www.godaddy.com) |
@@ -207,11 +207,13 @@ to `standard`.
 | [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/aragon.png>](https://aragon.org) | [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/flowsent.png>](https://www.flowsent.com) | [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/puma-browser.png>](https://www.pumabrowser.com/) | [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/webstorm.png>](https://www.jetbrains.com/webstorm/) |
 |---|---|---|---|
 
-
 | [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/fastify.png>](https://www.fastify.io) | [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/scuttlebutt.png>](https://www.scuttlebutt.nz) | [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/solid.png>](https://solid.inrupt.com) | [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/grab.png>](https://www.grab.com) |
 |---|---|---|---|
 
-| [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/jublia.png>](https://jublia.com/) | [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/atom.png>](https://atom.io) | [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/peek.png>](https://www.peek.com) | Your Logo Here |
+| [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/jublia.png>](https://jublia.com/) | [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/atom.png>](https://atom.io) | [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/peek.png>](https://www.peek.com) | [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/dotenv.png>](https://www.dotenv.org) |
+|---|---|---|---|
+
+| [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/nodesource.png>](https://nodesource.com) | [<img width=190 src=https://cdn.rawgit.com/standard/standard/master/docs/logos/searchapi.png>](https://www.searchapi.io/) | Your Logo Here |  |
 |---|---|---|---|
 
 
@@ -408,14 +410,6 @@ In rare cases, you'll need to break a rule and hide the error generated by
 JavaScript Standard Style uses [ESLint](http://eslint.org/) under-the-hood and
 you can hide errors as you normally would if you used ESLint directly.
 
-To get verbose output (so you can find the particular rule name to ignore), run:
-
-```bash
-$ standard --verbose
-Error: Use JavaScript Standard Style
-  routes/error.js:20:36: 'file' was used before it was defined. (no-use-before-define)
-```
-
 Disable **all rules** on a specific line:
 
 ```js
@@ -592,7 +586,7 @@ $ standard --env mocha
 
 Where `mocha` can be one of `jest`, `jasmine`, `qunit`, `phantomjs`, and so on. To see a
 full list, check ESLint's
-[specifying environments](http://eslint.org/docs/user-guide/configuring.html#specifying-environments)
+[specifying environments](https://eslint.org/docs/latest/use/configure/language-options#specifying-environments)
 documentation. For a list of what globals are available for these environments,
 check the
 [globals](https://github.com/sindresorhus/globals/blob/master/globals.json) npm
@@ -702,7 +696,7 @@ fi
 
 The [pre-commit](https://pre-commit.com/) library allows hooks to be declared within a `.pre-commit-config.yaml` configuration file in the repo, and therefore more easily maintained across a team.
 
-Users of pre-commit can simply add `standard` to their `.pre-commit-config.yaml` file, which will automatically fix `.js`, `.jsx`, `.ts`, `.tsx`, `.mjs` and `.cjs` files:
+Users of pre-commit can simply add `standard` to their `.pre-commit-config.yaml` file, which will automatically fix `.js`, `.jsx`, `.mjs` and `.cjs` files:
 ```yaml
   - repo: https://github.com/standard/standard
     rev: master
@@ -736,7 +730,7 @@ $ npm install snazzy
 And run:
 
 ```bash
-$ standard --verbose | snazzy
+$ standard | snazzy
 ```
 
 There's also [standard-tap](https://www.npmjs.com/package/standard-tap),
@@ -748,31 +742,38 @@ There's also [standard-tap](https://www.npmjs.com/package/standard-tap),
 
 Yes!
 
-### `standard.lintText(text, [opts], callback)`
+### `async standard.lintText(text, [opts])`
 
 Lint the provided source `text`. An `opts` object may be provided:
 
 ```js
 {
-  cwd: '',      // current working directory (default: process.cwd())
-  filename: '', // path of the file containing the text being linted (optional, though some eslint plugins require it)
-  fix: false,   // automatically fix problems
-  globals: [],  // custom global variables to declare
-  plugins: [],  // custom eslint plugins
-  envs: [],     // custom eslint environment
-  parser: ''    // custom js parser (e.g. @babel/eslint-parser)
+  // unique to lintText
+  filename: '',         // path of file containing the text being linted
+
+  // common to lintText and lintFiles
+  cwd: '',              // current working directory (default: process.cwd())
+  fix: false,           // automatically fix problems
+  extensions: [],       // file extensions to lint (has sane defaults)
+  globals: [],          // custom global variables to declare
+  plugins: [],          // custom eslint plugins
+  envs: [],             // custom eslint environment
+  parser: '',           // custom js parser (e.g. babel-eslint)
+  usePackageJson: true, // use options from nearest package.json?
+  useGitIgnore: true    // use file ignore patterns from .gitignore?
 }
 ```
 
-Additional options may be loaded from a `package.json` if it's found for the
-current working directory.
+All options are optional, though some ESLint plugins require the `filename` option.
 
-The `callback` will be called with an `Error` and `results` object.
+Additional options may be loaded from a `package.json` if it's found for the current working directory. See below for further details.
+
+Returns a `Promise` resolving to the `results` or rejected with an `Error`.
 
 The `results` object will contain the following properties:
 
 ```js
-var results = {
+const results = {
   results: [
     {
       filePath: '',
@@ -789,34 +790,39 @@ var results = {
 }
 ```
 
-### `results = standard.lintTextSync(text, [opts])`
-
-Synchronous version of `standard.lintText()`. If an error occurs, an exception is
-thrown. Otherwise, a `results` object is returned.
-
-### `standard.lintFiles(files, [opts], callback)`
+### `async standard.lintFiles(files, [opts])`
 
 Lint the provided `files` globs. An `opts` object may be provided:
 
 ```js
-var opts = {
-  ignore: [],   // file globs to ignore (has sane defaults)
-  cwd: '',      // current working directory (default: process.cwd())
-  fix: false,   // automatically fix problems
-  globals: [],  // global variables to declare
-  plugins: [],  // eslint plugins
-  envs: [],     // eslint environment
-  parser: ''    // js parser (e.g. @babel/eslint-parser)
+{
+  // unique to lintFiles
+  ignore: [],           // file globs to ignore (has sane defaults)
+
+  // common to lintText and lintFiles
+  cwd: '',              // current working directory (default: process.cwd())
+  fix: false,           // automatically fix problems
+  extensions: [],       // file extensions to lint (has sane defaults)
+  globals: [],          // custom global variables to declare
+  plugins: [],          // custom eslint plugins
+  envs: [],             // custom eslint environment
+  parser: '',           // custom js parser (e.g. babel-eslint)
+  usePackageJson: true, // use options from nearest package.json?
+  useGitIgnore: true    // use file ignore patterns from .gitignore?
 }
 ```
 
-The `callback` will be called with an `Error` and `results` object (same as above).
+Additional options may be loaded from a `package.json` if it's found for the current working directory. See below for further details.
+
+Both `ignore` and `files` patterns are resolved relative to the current working directory.
+
+Returns a `Promise` resolving to the `results` or rejected with an `Error` (same as above).
 
 ## How do I contribute to StandardJS?
 
 Contributions are welcome! Check out the [issues](https://github.com/standard/standard/issues) or the [PRs](https://github.com/standard/standard/pulls), and make your own if you want something that you don't see there.
 
-Want to chat? Join contributors on IRC in the `#standard` channel on freenode.
+Want to chat? [Join contributors on Discord](https://discord.gg/Jxjejujpmc).
 
 Here are some important packages in the `standard` ecosystem:
 

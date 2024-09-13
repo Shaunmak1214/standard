@@ -14,7 +14,7 @@
 </p>
 
 <h5 align="center">
-  Sponsored by&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://speakeasy.co/?utm_source=standardjs.com&utm_medium=sponsorship&utm_campaign=standard"><img src="https://speakeasy.co/logo-text.png" alt="Speakeasy" height=50 valign="middle"></a>
+  Sponsored by&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://socket.dev"><img src="https://cdn.rawgit.com/standard/standard/master/docs/logos/socket.png" alt="Socket – Supply Chain Dependency Security for JavaScript and npm" height=50 valign="middle"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://wormhole.app/?utm_medium=sponsorship&utm_source=standard&utm_campaign=feross"><img src="https://cdn.rawgit.com/standard/standard/master/docs/logos/wormhole.png" alt="Wormhole" height=50 valign="middle"></a>
 </h5>
 
 <p align="center">
@@ -67,7 +67,7 @@ npm install standard --save-dev
 - **Y [mucho más][5]** – *prueba `standard` hoy mismo!*
 
 [1]: http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding
-[2]: http://inimino.org/~inimino/blog/javascript_semicolons
+[2]: https://web.archive.org/web/20201206065632/http://inimino.org/~inimino/blog/javascript_semicolons
 [3]: https://www.youtube.com/watch?v=gsfbh17Ax9I
 [4]: RULES-esla.md#semicolons
 [5]: RULES-esla.md#javascript-standard-style
@@ -393,14 +393,6 @@ En raros casos, necesitarás romper una regla y ocultar la alerta generada por `
 
 JavaScript Standard Style usa [ESLint](http://eslint.org/) bajo la capucha y puedes ocultar las alertas como normalmente lo harías si usaras ESLint directamente.
 
-Para obtener una salida más específica (así puedes encontrar el nombre de la regla a ignorar) ejecute:
-
-```bash
-$ standard --verbose
-Error: Use JavaScript Standard Style
-  routes/error.js:20:36: 'file' was used before it was defined. (no-use-before-define)
-```
-
 Inhabilitar **toda las reglas** en una línea específica:
 
 ```js
@@ -602,7 +594,7 @@ $ npm install snazzy
 y ejecutar:
 
 ```bash
-$ standard --verbose | snazzy
+$ standard | snazzy
 ```
 
 También tienes [standard-tap](https://www.npmjs.com/package/standard-tap),
@@ -612,25 +604,33 @@ También tienes [standard-tap](https://www.npmjs.com/package/standard-tap),
 
 ## Node.js API
 
-### `standard.lintText(text, [opts], callback)`
+### `async standard.lintText(text, [opts])`
 
 Hacer Lint al texto fuente previsto para hacer cumplir JavaScript Standard Style.
 Un objeto `opts` puede ser proporcionado:
 
 ```js
-var opts = {
-  fix: false,   // automatically fix problems
-  globals: [],  // global variables to declare
-  plugins: [],  // eslint plugins
-  envs: [],     // eslint environment
-  parser: ''    // js parser (e.g. @babel/eslint-parser)
+{
+  // unique to lintText
+  filename: '',         // path of file containing the text being linted
+
+  // common to lintText and lintFiles
+  cwd: '',              // current working directory (default: process.cwd())
+  fix: false,           // automatically fix problems
+  extensions: [],       // file extensions to lint (has sane defaults)
+  globals: [],          // custom global variables to declare
+  plugins: [],          // custom eslint plugins
+  envs: [],             // custom eslint environment
+  parser: '',           // custom js parser (e.g. babel-eslint)
+  usePackageJson: true, // use options from nearest package.json?
+  useGitIgnore: true    // use file ignore patterns from .gitignore?
 }
 ```
 
-El `callback` será llamado con un objeto de `Error` y `results`:
+`results` objeto :
 
 ```js
-var results = {
+const results = {
   results: [
     {
       filePath: '',
@@ -638,7 +638,8 @@ var results = {
         { ruleId: '', message: '', line: 0, column: 0 }
       ],
       errorCount: 0,
-      warningCount: 0
+      warningCount: 0,
+      output: '' // fixed source code (only present with {fix: true} option)
     }
   ],
   errorCount: 0,
@@ -646,24 +647,30 @@ var results = {
 }
 ```
 
-### `standard.lintFiles(files, [opts], callback)`
+### `async standard.lintFiles(files, [opts])`
 
 Hacer Lint a los archivos que concuerden con el patrón globs.
 Un objeto `opts` puede ser proporcionado:
 
 ```js
-var opts = {
-  ignore: [],   // file globs to ignore (has sane defaults)
-  cwd: '',      // current working directory (default: process.cwd())
-  fix: false,   // automatically fix problems
-  globals: [],  // global variables to declare
-  plugins: [],  // eslint plugins
-  envs: [],     // eslint environment
-  parser: ''    // js parser (e.g. @babel/eslint-parser)
+{
+  // unique to lintFiles
+  ignore: [],           // file globs to ignore (has sane defaults)
+
+  // common to lintText and lintFiles
+  cwd: '',              // current working directory (default: process.cwd())
+  fix: false,           // automatically fix problems
+  extensions: [],       // file extensions to lint (has sane defaults)
+  globals: [],          // custom global variables to declare
+  plugins: [],          // custom eslint plugins
+  envs: [],             // custom eslint environment
+  parser: '',           // custom js parser (e.g. babel-eslint)
+  usePackageJson: true, // use options from nearest package.json?
+  useGitIgnore: true    // use file ignore patterns from .gitignore?
 }
 ```
 
-El `callback` será llamado con un objeto de `Error` y `results`: (igual al de arriba).
+Objeto `results` (igual al de arriba).
 
 ## ¿Cómo puedo contribuir a `standard`?
 

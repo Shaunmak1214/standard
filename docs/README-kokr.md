@@ -14,7 +14,7 @@
 </p>
 
 <h5 align="center">
-  Sponsored by&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://speakeasy.co/?utm_source=standardjs.com&utm_medium=sponsorship&utm_campaign=standard"><img src="https://speakeasy.co/logo-text.png" alt="Speakeasy" height=50 valign="middle"></a>
+  Sponsored by&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://socket.dev"><img src="https://cdn.rawgit.com/standard/standard/master/docs/logos/socket.png" alt="Socket – Supply Chain Dependency Security for JavaScript and npm" height=50 valign="middle"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://wormhole.app/?utm_medium=sponsorship&utm_source=standard&utm_campaign=feross"><img src="https://cdn.rawgit.com/standard/standard/master/docs/logos/wormhole.png" alt="Wormhole" height=50 valign="middle"></a>
 </h5>
 
 <p align="center">
@@ -65,7 +65,7 @@ npm install standard --save-dev
 - **[더 많은 장점][5]이 있습니다.** - *`standard`를 시도해보세요!*
 
 [1]: http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding
-[2]: http://inimino.org/~inimino/blog/javascript_semicolons
+[2]: https://web.archive.org/web/20201206065632/http://inimino.org/~inimino/blog/javascript_semicolons
 [3]: https://www.youtube.com/watch?v=gsfbh17Ax9I
 [4]: RULES-kokr.md#semicolons
 [5]: RULES-kokr.md#javascript-standard-style
@@ -374,14 +374,6 @@ WebStrom은 `standard`가 직접적으로 IDE에서 사용가능다고 [기본�
 
 JavaScript 표준 스타일은 [ESLint](http://eslint.org/)를 사용하며 ESLint를 직접 사용한 경우 일반적으로 경고를 숨길 수 있습니다.
 
-자세한 출력을 얻으려면 (무시할 특정 규칙 이름을 찾을 수 있도록) 다음을 실행하십시오.
-
-```bash
-$ standard --verbose
-Error: Use JavaScript Standard Style
-  routes/error.js:20:36: 'file' was used before it was defined. (no-use-before-define)
-```
-
 특정 줄에서 **모든 규칙** 을 비활성화할 수 있습니다.
 
 ```js
@@ -622,7 +614,7 @@ $ npm install snazzy
 그리고 아래 명령어를 실행합니다.
 
 ```bash
-$ standard --verbose | snazzy
+$ standard | snazzy
 ```
 
 [standard-tap](https://www.npmjs.com/package/standard-tap),
@@ -634,30 +626,34 @@ $ standard --verbose | snazzy
 
 네!
 
-### `standard.lintText(text, [opts], callback)`
+### `async standard.lintText(text, [opts])`
 
 린트에 제공할 소스 `text`를 준비합니다. `opts` 객체를 추가할 수 있습니다.
 
 ```js
 {
-  cwd: '',      // 현재 작업 디렉토리 (기본: process.cwd())
-  filename: '', // 린트 텍스트를 포함하는 파일의 경로 (선택, 일부 eslint 플러그인이 필요함)
-  fix: false,   // 자동 문제 해결
-  globals: [],  // 선언할 커스텀 글로벌 변수
-  plugins: [],  // 커스텀 eslint 플러그인
-  envs: [],     // 커스텀 eslint 환경
-  parser: ''    // 커스텀 js 파서  (예: @babel/eslint-parser)
+  // unique to lintText
+  filename: '',         // path of file containing the text being linted
+
+  // common to lintText and lintFiles
+  cwd: '',              // current working directory (default: process.cwd())
+  fix: false,           // automatically fix problems
+  extensions: [],       // file extensions to lint (has sane defaults)
+  globals: [],          // custom global variables to declare
+  plugins: [],          // custom eslint plugins
+  envs: [],             // custom eslint environment
+  parser: '',           // custom js parser (e.g. babel-eslint)
+  usePackageJson: true, // use options from nearest package.json?
+  useGitIgnore: true    // use file ignore patterns from .gitignore?
 }
 ```
 
 `package.json`가 현재 작업 디렉토리에서 발견되면 추가옵션을 로드 할 수 있습니다.
 
-`콜백(callback)`은 `Error`와 `results`객체와 함께 호출 될 것입니다.
-
 `results`객체는 다음과 같은 속성을 포함합니다.
 
 ```js
-var results = {
+const results = {
   results: [
     {
       filePath: '',
@@ -666,7 +662,7 @@ var results = {
       ],
       errorCount: 0,
       warningCount: 0,
-      output: '' // 고정 소스 코드 ({fix : true} 옵션과 함께 제공)
+      output: '' // fixed source code (only present with {fix: true} option)
     }
   ],
   errorCount: 0,
@@ -674,27 +670,29 @@ var results = {
 }
 ```
 
-### `results = standard.lintTextSync(text, [opts])`
-
-`standard.lintText()`의 동기화 버전. 오류가 발생하면 예외가 발생합니다. 그렇지 않으면 `results`객체가 반환됩니다.
-
-### `standard.lintFiles(files, [opts], callback)`
+### `async standard.lintFiles(files, [opts])`
 
 제공된 'files' 덩어리를 린트에 적용할 수 있습니다. `opts` 객체를 추가할 수 있습니다.
 
 ```js
-var opts = {
-  ignore: [],   // 파일뭉치를 무시합니다. (기본적인 무시파일들이 포함되어 있습니다)
-  cwd: '',      // 현재 작업 디렉토리 (기본: process.cwd())
-  fix: false,   // 자동 문제 해결
-  globals: [],  // 선언할 글로벌 변수
-  plugins: [],  // eslint 플러그인
-  envs: [],     // eslint 환경
-  parser: ''    // js 파서 (예: @babel/eslint-parser)
+{
+  // unique to lintFiles
+  ignore: [],           // file globs to ignore (has sane defaults)
+
+  // common to lintText and lintFiles
+  cwd: '',              // current working directory (default: process.cwd())
+  fix: false,           // automatically fix problems
+  extensions: [],       // file extensions to lint (has sane defaults)
+  globals: [],          // custom global variables to declare
+  plugins: [],          // custom eslint plugins
+  envs: [],             // custom eslint environment
+  parser: '',           // custom js parser (e.g. babel-eslint)
+  usePackageJson: true, // use options from nearest package.json?
+  useGitIgnore: true    // use file ignore patterns from .gitignore?
 }
 ```
 
-`callback`은 `Error`와 `results`객체로 호출됩니다. (위와 같습니다)
+`results`객체로 호출됩니다. (위와 같습니다)
 
 ## `standard` 기여는 어떻게 하나요?
 
